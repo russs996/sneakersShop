@@ -5,10 +5,10 @@ import Carousel from './Carousel/Carousel';
 
 const Home = () => {
     return (
-        <div style={{ backgroundColor: "black" }}>
+        <div >
             <Grid>
                 <Carousel />
-                <Card />
+                {/* <Card /> */}
             </Grid>
         </div>
     );

@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "title": "NIKE Jordanaaa",
+      "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/729e5ba4-a75e-4962-8a0a-28eddf45cfd5/%D0%BA%D1%80%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D0%BA%D0%B8-air-jordan-1-mid-xMNLGv.png",
+      "description": "31313",
+      "price": "150",
+      "id": 1
+    },
+    {
+      "title": "NIKE Jordan  ",
+      "image": "https://images.satu.kz/93676850_w640_h640_basketbolnye-krossovki-nike.jpg",
+      "description": "grey",
+      "price": "150",
+      "id": 2
+    },
+    {
+      "title": "NIKE ",
+      "image": "https://cdn.aizel.ru/i/1278344.jpg",
+      "description": "purple",
+      "price": "200",
+      "id": 3
+    }
+  ]
+}
