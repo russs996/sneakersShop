@@ -10,8 +10,8 @@ const Routes = () => {
     return (
         <BrowserRouter>
             <ClientContextProvider>
+                <Navbar />
                 <AdminContextProvider>
-                    <Navbar />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/admin" component={AdminPanel} />
