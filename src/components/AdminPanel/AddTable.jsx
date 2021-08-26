@@ -28,6 +28,7 @@ const AddTable = () => {
                         <TableCell>#</TableCell>
                         <TableCell>#</TableCell>
                         <TableCell>Название</TableCell>
+                        <TableCell align="left">Модель</TableCell>
                         <TableCell align="left">Фото</TableCell>
                         <TableCell align="left">Описание</TableCell>
                         <TableCell align="left">Цена</TableCell>
@@ -41,15 +42,16 @@ const AddTable = () => {
                                 {
                                     products.length ? (
                                         products.map(product => (
-                                            <React.Fragment key={product.id} style={{ marginBottom: '100px' }}>
+                                            <React.Fragment key={product.id} >
                                                 {
                                                     changeId === product.id ? (
                                                         <Edit setChangeId={setChangeId} />
                                                     ) : (
-                                                        <TableRow >
+                                                        <TableRow id="admin-1" >
                                                             <TableCell align="left"> <button onClick={() => deleteProduct(product.id)}>DEL</button> </TableCell>
                                                             <TableCell align="left"> <button onClick={() => handleEditChange(product.id)}>EDIT</button> </TableCell>
                                                             <TableCell component="th" scope="row">{product.title}</TableCell>
+                                                            <TableCell component="th" scope="row">{product.model}</TableCell>
                                                             <TableCell align="left"> <img width="100" src={product.image} /> </TableCell>
                                                             <TableCell align="left">{product.description}</TableCell>
                                                             <TableCell align="left">{product.price}</TableCell>

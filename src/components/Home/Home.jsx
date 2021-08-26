@@ -5,10 +5,12 @@ import Carousel from './Carousel/Carousel';
 import { useHistory } from 'react-router-dom';
 import { clientContex } from '../../contexts/ClientContext';
 import { Pagination } from '@material-ui/lab';
+import List from './List';
+import Sidebar from './Sidebar';
 
 const Home = () => {
     const history = useHistory()
-    const [page, setPage] = useState(1, getPage())
+    const [page, setPage] = useState(10, getPage())
     const { getProducts, paginatedPages } = useContext(clientContex)
     function getPage() {
         const search = new URLSearchParams(history.location.pathname)
@@ -21,7 +23,7 @@ const Home = () => {
     const handlePage = (e, page) => {
         const search = new URLSearchParams(history.location.search)
         search.set('_page', page)
-        history.push(`${history.location.pathname}?_page=8&${search.toString()}`)
+        history.push(`${history.location.pathname}?_page=10&${search.toString()}`)
         setPage(page)
         getProducts(history)
 
@@ -31,7 +33,8 @@ const Home = () => {
         <div >
             <Grid>
                 <Carousel />
-                {/* <Card /> */}
+                <Sidebar />
+                <List />
             </Grid>
             <Pagination count={paginatedPages} page={+page} onChange={handlePage} shape="rounded" style={{ marginBottom: '80px', display: 'flex', justifyContent: 'center' }} />
         </div>

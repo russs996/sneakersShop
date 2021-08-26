@@ -1,25 +1,85 @@
 {
   "products": [
     {
-      "title": "NIKE Jordanaaa",
-      "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/729e5ba4-a75e-4962-8a0a-28eddf45cfd5/%D0%BA%D1%80%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D0%BA%D0%B8-air-jordan-1-mid-xMNLGv.png",
+      "title": "NIKE",
+      "image": "https://raw.githubusercontent.com/ipenywis/react-3d-card/e7f929cd568d06f15101c584523040a798247c27/src/assets/images/air-jordan-transparent.svg",
       "description": "31313",
       "price": "150",
-      "id": 1
+      "comments": [],
+      "id": 1,
+      "model": "Jordans"
     },
     {
-      "title": "NIKE Jordan  ",
-      "image": "https://images.satu.kz/93676850_w640_h640_basketbolnye-krossovki-nike.jpg",
-      "description": "grey",
-      "price": "150",
+      "title": "Puma",
+      "model": "x AKA BOKU",
+      "image": "https://raw.githubusercontent.com/ipenywis/react-3d-card/e7f929cd568d06f15101c584523040a798247c27/src/assets/images/air-jordan-transparent.svg",
+      "description": "Fututre ride",
+      "price": "350",
+      "comments": [],
       "id": 2
     },
     {
-      "title": "NIKE ",
-      "image": "https://cdn.aizel.ru/i/1278344.jpg",
-      "description": "purple",
-      "price": "200",
+      "title": "Puma",
+      "model": "smash 2",
+      "image": "https://raw.githubusercontent.com/ipenywis/react-3d-card/e7f929cd568d06f15101c584523040a798247c27/src/assets/images/air-jordan-transparent.svg",
+      "description": "white",
+      "price": "110",
+      "comments": [],
       "id": 3
+    },
+    {
+      "title": "Adidas",
+      "model": "Ozweego",
+      "image": "https://raw.githubusercontent.com/ipenywis/react-3d-card/e7f929cd568d06f15101c584523040a798247c27/src/assets/images/air-jordan-transparent.svg",
+      "description": "black",
+      "price": "120",
+      "comments": [],
+      "id": 4
+    },
+    {
+      "title": "NewBalance",
+      "model": "M574gs",
+      "image": "https://raw.githubusercontent.com/ipenywis/react-3d-card/e7f929cd568d06f15101c584523040a798247c27/src/assets/images/air-jordan-transparent.svg",
+      "description": "Grey",
+      "price": "60",
+      "comments": [],
+      "id": 5
+    },
+    {
+      "title": "New Balance",
+      "model": "374",
+      "image": "https://github.com/developedbyed/3d-card-effect/blob/master/adidas.png?raw=true",
+      "description": "Gradient",
+      "price": "99",
+      "comments": [],
+      "id": 6
+    },
+    {
+      "title": "Nike",
+      "model": "Lebrons",
+      "image": "https://raw.githubusercontent.com/ipenywis/react-3d-card/e7f929cd568d06f15101c584523040a798247c27/src/assets/images/air-jordan-transparent.svg",
+      "description": "Multi",
+      "price": "195",
+      "comments": [],
+      "id": 7
+    },
+    {
+      "title": "Nike",
+      "model": "Lebron",
+      "image": "https://github.com/developedbyed/3d-card-effect/blob/master/adidas.png?raw=true",
+      "description": "ps-18",
+      "price": "250",
+      "comments": [],
+      "id": 8
+    },
+    {
+      "title": "ASICS",
+      "model": "xxx",
+      "image": "https://github.com/developedbyed/3d-card-effect/blob/master/adidas.png?raw=true",
+      "description": "white",
+      "price": "30",
+      "comments": [],
+      "id": 9
     }
   ]
 }

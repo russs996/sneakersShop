@@ -1,7 +1,7 @@
 import { Grid } from '@material-ui/core';
 import { clientContex } from '../../contexts/ClientContext';
 import Card from '../../components/Home/Card/Card'
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 const List = () => {
     const { getProducts, products } = useContext(clientContex)
@@ -11,7 +11,7 @@ const List = () => {
     }, [])
 
     return (
-        <Grid container justify="space-evenly" margin="10px 0" className="list" style={{ position: 'relative' }}>
+        <Grid id="grid1" style={{ position: 'relative', display: "flex", justifyContent: "space-between", flexWrap: 'wrap' }}>
             {
                 products ? (
                     products.length ? (

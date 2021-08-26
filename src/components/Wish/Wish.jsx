@@ -7,10 +7,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Button, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { calcTotalPrice } from '../../helpers/CalcPrice';
-import { clientContext } from '../../contexts/ClientContext';
-import { Link } from 'react-router-dom'
+import { clientContex } from '../../contexts/ClientContext';
 
 const useStyles = makeStyles({
     table: {
@@ -22,13 +21,14 @@ const useStyles = makeStyles({
     }
 });
 
-const Cart = () => {
+const Wish = () => {
     const classes = useStyles()
-    const { cart, getCart, changeProductCount } = useContext(clientContext)
+    const { wish, getWish, changeProductCount } = useContext(clientContex)
 
     useEffect(() => {
-        getCart()
+        getWish()
     }, [])
+
     return (
         <TableContainer component={Paper} className={classes.paper} style={{ heigth: '100vh', marginTop: '100px' }}>
             <Table className={classes.table} aria-label="spanning table">
@@ -37,14 +37,12 @@ const Cart = () => {
                         <TableCell>Image</TableCell>
                         <TableCell align="right">Title</TableCell>
                         <TableCell align="right">Price</TableCell>
-                        <TableCell align="right">Count</TableCell>
-                        <TableCell align="right">SubPrice</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {cart.products ? (
+                    {wish.products ? (
                         <>
-                            {cart.products.map((elem) => (
+                            {wish.products.map((elem) => (
                                 <TableRow key={elem.item.id}>
                                     <TableCell><img style={{ width: "50px" }} src={elem.item.image} alt={elem.item.title} /></TableCell>
                                     <TableCell align="right">{elem.item.title}</TableCell>
@@ -66,17 +64,10 @@ const Cart = () => {
                         <TableCell rowSpan={3} />
                         <TableCell colSpan={2}><Typography variant="h5">Total:</Typography></TableCell>
                         {
-                            cart.products ? (
-                                <TableCell align="right"><Typography variant="h5">{calcTotalPrice(cart.products)}</Typography></TableCell>
+                            wish.products ? (
+                                <TableCell align="right"><Typography variant="h5">{calcTotalPrice(wish.products)}</Typography></TableCell>
                             ) : (null)
                         }
-                    </TableRow>
-                    <TableRow >
-                        <Link to="pay-card">
-                            <TableCell colSpan={3} align="right">
-                                <Button variant="contained" color="primary">BUY</Button>
-                            </TableCell>
-                        </Link>
                     </TableRow>
                 </TableBody>
             </Table>
@@ -84,4 +75,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default Wish;

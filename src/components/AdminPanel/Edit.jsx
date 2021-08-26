@@ -33,6 +33,7 @@ const Edit = ({ setChangeId }) => {
                         <button disabled>Delete</button>
                         <button onClick={handleClick}>Save</button>
                         <input onChange={handleInput} value={editProduct.title} type="text" name="title" />
+                        <input onChange={handleInput} value={editProduct.module} type="text" name="model" />
                         <input onChange={handleInput} value={editProduct.image} type="img" name="image" />
                         <input onChange={handleInput} value={editProduct.description} type="text" name="description" />
                         <input onChange={handleInput} value={editProduct.price} type="number" name="number" />

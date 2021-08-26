@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+#admin-1 {
+  width: 1000px;
+}
+
+#root {
+  background-color: white;
+}

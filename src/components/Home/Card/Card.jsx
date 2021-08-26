@@ -1,8 +1,13 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Marginer } from "./marginer";
-
+import './Card.css';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import { clientContex } from "../../../contexts/ClientContext";
+import { IconButton } from '@material-ui/core';
+import { Comment } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 
 const CardWrapper = styled.div`
@@ -15,11 +20,11 @@ const CardWrapper = styled.div`
 
 const CardContainer = styled(motion.div)`
   width: 285px;
-  height: 500px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   border-radius: 25px;
-  box-shadow: 0 2px 7px 1px rgba(31, 31, 31, 0.2);
+  box-shadow: 0 4px 7px 7px rgba(31, 31, 31, 30%);
   background-color: #1d1f21;
   color: #fff;
   position: relative;
@@ -48,7 +53,7 @@ const Circle = styled.div`
 `;
 
 const TopContainer = styled.div`
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-direction: column;
   flex: 1.2;
@@ -88,10 +93,10 @@ const Shoes = styled(motion.div)`
   z-index: 99;
   user-select: none;
   margin-right: 3em;
-  margin-top: 4em;
+  margin-top: 0em;
   img {
     width: auto;
-    height: 100%;
+    height: 60%;
     user-select: none;
   }
 `;
@@ -146,16 +151,19 @@ const BuyButton = styled.button`
 `;
 
 
-function Card(props) {
+function Card({ product }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
   const rotateY = useTransform(x, [-100, 100], [-30, 30]);
+  const { addProductInWish, checkProductInWish } = useContext(clientContex)
+
 
   return (
-    <CardWrapper>
+    <CardWrapper style={{ width: '300px', }}>
       <CardContainer
-        style={{ x, y, rotateX, rotateY, z: 100 }}
+        id="card1"
+        style={{ x, y, rotateX, rotateY, z: 100, marginTop: '30px', marginBottom: '50px' }}
         drag
         dragElastic={0.16}
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
@@ -172,22 +180,33 @@ function Card(props) {
               dragElastic={0.12}
               whileTap={{ cursor: "grabbing" }}
             >
-              <img />
+              <img id="img1" src={product.image} />
             </Shoes>
           </ShoesWrapper>
-          <NikeText>SNEAK SHOP</NikeText>
+          <NikeText id="ttex">SNEAK SHOP</NikeText>
         </TopContainer>
         <BottomContainer>
           <DetailsContainer>
-            <SmallText>NIKE</SmallText>
+            <SmallText>{product.title}</SmallText>
             <SpacedHorizontalContainer>
-              <MediumText></MediumText>
-              <MediumText></MediumText>
+              <MediumText>{product.model}</MediumText>
+              <MediumText>{product.price}$</MediumText>
             </SpacedHorizontalContainer>
             <Marginer direction="vertical" margin="1.2em" />
             <SpacedHorizontalContainer>
-              <MediumText>YOUR NEXT SHOES</MediumText>
-              <BuyButton>BUY</BuyButton>
+              <MediumText>{product.description}</MediumText>
+              <Link to={`/detail/${product.id}`}>
+                <IconButton style={{ color: 'white' }}>
+                  <Comment />
+                </IconButton>
+              </Link>
+              <IconButton
+                aria-label="share"
+                color={checkProductInWish(product.id) ? "secondary" : "inherit"}
+                onClick={() => addProductInWish(product)}>
+                <FavoriteBorderIcon />
+              </IconButton>
+              <BuyButton id="button1">BUY</BuyButton>
             </SpacedHorizontalContainer>
           </DetailsContainer>
         </BottomContainer>
